@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achhar | Our Heritage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { spice: '#9c2a1a', clay: '#1a120f', cream: '#fcfaf7', amber: '#d68b33' },
+                    fontFamily: { display: ['Playfair Display', 'serif'], body: ['DM Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #1a120f; color: #fcfaf7; overflow-x: hidden; font-family: 'DM Sans', sans-serif; }
+        
+        .panel { position: relative; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        
+        /* Smooth transition for the navigation */
+        .glass-nav {
+            background: rgba(26, 18, 15, 0.5);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+
+        /* Image Zoom Effect Container */
+        .zoom-bg-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .zoom-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.2); /* Initial state for animation */
+            filter: brightness(0.5);
+        }
+
+        .text-reveal { opacity: 0; transform: translateY(50px); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #9c2a1a; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full px-10 py-6 flex justify-between items-center glass-nav">
+        <div class="text-xl font-display font-black tracking-tighter text-spice uppercase">Achhar.</div>
+        <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <a href="index.html" class="hover:text-spice transition-all">The Lab</a>
+            <a href="#" class="text-spice">Our Story</a>
+            <a href="#" class="hover:text-spice transition-all">Archive</a>
+        </div>
+    </nav>
+
+    <section class="panel" id="hero">
+        <div class="zoom-bg-wrapper">
+            <img src="family.PNG" class="zoom-bg" id="hero-img">
+        </div>
+        <div class="text-center z-10">
+            <h4 class="text-amber uppercase tracking-[1em] text-[10px] mb-6 opacity-0" id="hero-tag">EST. 2026 / KATHMANDU</h4>
+            <h1 class="font-display text-8xl md:text-[12rem] italic leading-none opacity-0" id="hero-title">Ancestral <br> Flame.</h1>
+        </div>
+    </section>
+
+    <section class="panel bg-clay">
+        <div class="max-w-3xl px-10 text-center">
+            <p class="text-2xl md:text-4xl font-light leading-relaxed text-reveal">
+                We asked ourselves a simple question:
+What if the bold taste of Nepali spices and the rich flavor of chicken could come together in one unforgettable achar? <br>
+<span class="text-spice italic font-display"> That is how Spicy Chicken Acchar was born.</span> <br>It is the flavor that reminds you of home whether you are sitting around a family table in Nepal or living thousands of miles away.
+
+            </p>
+        </div>
+    </section>
+
+    <section class="panel overflow-visible">
+        <div class="grid md:grid-cols-2 w-full h-full">
+            <div class="relative overflow-hidden h-full">
+                <img src="pegion.PNG" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" id="craft-img">
+            </div>
+            <div class="flex flex-col justify-center p-12 md:p-24 space-y-10">
+                <div>
+                    <span class="text-spice font-bold tracking-widest text-xs uppercase">More Than Just</span>
+                    <h2 class="font-display text-6xl italic mt-4 text-reveal">Achhar</h2>
+                </div>
+                <p class="text-gray-400 leading-loose text-reveal">
+Spicy Chicken Achar is not just a side dish.
+It is the spark that turns a simple meal into a memorable one.
+
+A spoonful beside your rice.
+A bold bite with your favorite snacks.
+A taste that brings people together.     
+Because when there is spice, there is excitement.
+And when there is achar, there is always another reason to eat just one more bite.
+                </p>
+                <div class="w-20 h-[1px] bg-spice text-reveal"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel bg-[#120d0b]">
+        <div class="absolute top-20 left-10 text-reveal">
+            <h2 class="font-display text-9xl opacity-5">Process</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10 px-10 md:px-20 z-10">
+            <div class="space-y-4 text-reveal">
+                <h3 class="font-display text-3xl italic text-amber">01. Crushing</h3>
+                <p class="text-sm text-gray-500">Manual stone grinding ensures the oils within the spice remain intact, unlike industrial blenders that burn the flavor.</p>
+            </div>
+            <div class="space-y-4 text-reveal">
+                <h3 class="font-display text-3xl italic text-amber">02. Tempering</h3>
+                <p class="text-sm text-gray-500">Pure mustard oil is heated to the smoking point, then infused with wild Himalayan herbs like Jimbu.</p>
+            </div>
+            <div class="space-y-4 text-reveal">
+                <h3 class="font-display text-3xl italic text-amber">03. Aging</h3>
+                <p class="text-sm text-gray-500">The jars are placed in the sun for 14 days, allowing the flavors to ferment and deepen into a complex umami.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel h-[80vh]">
+        <div class="zoom-bg-wrapper">
+             <div class="absolute inset-0 bg-spice mix-blend-multiply opacity-40"></div>
+             <img src="https://images.unsplash.com/photo-1615485245834-4bc6ca5f048e?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+        </div>
+        <div class="text-center">
+            <h2 class="font-display text-7xl md:text-9xl mb-8 text-reveal">Taste the <br> Heritage.</h2>
+            <a href="index.html" class="inline-block px-10 py-4 border border-white rounded-full text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-white hover:text-spice transition-all duration-500 text-reveal">
+                Enter The Lab
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-[8px] tracking-[1em] text-white/20 uppercase">Achhar Authentic Spices © 2026</p>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Initial Load Animation
+        const tl = gsap.timeline();
+        tl.to("#hero-title", { opacity: 1, y: 0, duration: 1.5, ease: "power4.out" })
+          .to("#hero-tag", { opacity: 1, y: 0, duration: 1 }, "-=1")
+          .to("#hero-img", { scale: 1, duration: 3, ease: "power2.out" }, "0");
+
+        // 2. Parallax Zoom for Hero on Scroll
+        gsap.to("#hero-img", {
+            scale: 1.5,
+            scrollTrigger: {
+                trigger: "#hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // 3. Reveal animations for all text sections
+        const reveals = gsap.utils.toArray('.text-reveal');
+        reveals.forEach((el) => {
+            gsap.to(el, {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // 4. Image Slide-in Effect
+        gsap.from("#craft-img", {
+            xPercent: -20,
+            scrollTrigger: {
+                trigger: "#craft-img",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+    </script>
+</body>
+</html>
