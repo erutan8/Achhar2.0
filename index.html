@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
+    
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6GGZ91XQ3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -11,6 +11,7 @@
 
   gtag('config', 'G-S6GGZ91XQ3');
 </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spicy Achaar Tales | Authentic Nepali Spices</title>
@@ -42,8 +43,7 @@
             }
         }
     </script>
-
-<meta property="og:type" content="website">
+    <meta property="og:type" content="website">
 <meta property="og:url" content="https://erutan8.github.io/Achhar2.0/">
 <meta property="og:title" content="Spicy Achaar Tales | Authentic Nepali Spices">
 <meta property="og:description" content="Homemade spicy chicken achhar and authentic Nepali spices.">
@@ -54,6 +54,7 @@
 <meta property="twitter:title" content="Spicy Achaar Tales | Authentic Nepali Spices">
 <meta property="twitter:description" content="Homemade spicy chicken achhar and authentic Nepali spices.">
 <meta property="twitter:image" content="https://erutan8.github.io/Achhar2.0/thumbnail.PNG">
+
     <style>
         /* Base Styles */
         body {
@@ -101,6 +102,13 @@
         #explode-section,
         .pin-spacer {
             overflow: visible !important;
+        }
+
+        /* MOBILE HIDE LOGIC FOR THE JAR SECTION */
+        @media screen and (max-width: 768px) {
+            #explode-section {
+                display: none !important;
+            }
         }
 
         /* Marquee Text Animation */
@@ -207,9 +215,9 @@
             }
         }
 
-        /* Hero Layout Safety */
+        /* Improved Hero Layout Safety */
         .hero-content-wrapper {
-            margin-top: 120px;
+            padding-top: clamp(100px, 15vh, 160px);
             position: relative;
             z-index: 20;
         }
@@ -225,17 +233,31 @@
         .process-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-            /* Darker overlay for better white text pop */
+            background: rgba(0, 0, 0, 0.65);
             z-index: 1;
+        }
+
+        /* Text Overlap Fixes */
+        .hero-fade {
+            position: relative;
+            z-index: 5;
+        }
+
+        @media (max-width: 640px) {
+            .hero-fade h1 {
+                line-height: 1.1;
+            }
+            .hero-content-wrapper {
+                padding-top: 100px;
+            }
         }
     </style>
 </head>
 
 <body class="font-body text-charcoal">
 
-    <nav id="main-nav" class="fixed w-full z-50 px-10 py-8 flex justify-between items-center text-white nav-transition">
-        <div class="text-2xl font-display font-black tracking-tighter uppercase">
+    <nav id="main-nav" class="fixed w-full z-50 px-6 md:px-10 py-6 md:py-8 flex justify-between items-center text-white nav-transition">
+        <div class="text-xl md:text-2xl font-display font-black tracking-tighter uppercase">
             Spicy chicken Achhar.
         </div>
         <div class="hidden md:flex gap-12 text-[11px] font-bold uppercase tracking-[0.25em]">
@@ -247,7 +269,7 @@
         </div>
     </nav>
 
-    <section class="hero relative min-h-screen flex flex-col items-center justify-start px-10 md:px-20 overflow-hidden">
+    <section class="hero relative min-h-screen flex flex-col items-center justify-start px-6 md:px-20 overflow-hidden">
         <div id="hero-bg" class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-black/65 z-10"></div>
             <video id="hero-video" autoplay muted playsinline class="w-full h-full object-cover">
@@ -257,86 +279,85 @@
         </div>
 
         <div class="hero-content-wrapper w-full max-w-6xl">
-            <h4 class="hero-fade text-amber uppercase tracking-[0.4em] font-bold text-[10px] mb-8">
+            <h4 class="hero-fade text-amber uppercase tracking-[0.4em] font-bold text-[9px] md:text-[10px] mb-6 md:mb-8">
                 Authentic Nepali Flavor & Tradition
             </h4>
 
-            <div class="hero-fade flex items-center gap-8 mb-6">
+            <div class="hero-fade flex items-center gap-4 md:gap-8 mb-4 md:mb-6">
                 <span class="font-display text-4xl md:text-7xl text-white italic font-bold tracking-tight uppercase">
                     Spicy
                 </span>
                 <div class="chili-icon-animate">
                     <img src="red-chilli-watercolor-illustration-ai-generated-free-png.png"
-                        class="w-14 md:w-24 h-auto object-contain" alt="Chili Illustration">
+                        class="w-12 md:w-24 h-auto object-contain" alt="Chili Illustration">
                 </div>
             </div>
 
-            <h1 class="hero-fade font-display text-6xl md:text-[5.5rem] text-white font-bold leading-[0.9] mb-12">
+            <h1 class="hero-fade font-display text-5xl md:text-[5.5rem] text-white font-bold leading-tight md:leading-[0.9] mb-8 md:mb-12">
                 Chicken <br>
                 <span class="italic text-amber">Achhar</span>
             </h1>
 
-            <p class="hero-fade text-white/75 text-base md:text-xl max-w-xl leading-relaxed mb-16">
-                Inspired by Nepal’s love for spice. The fiery kick <br> of Akabare Khursani meets perfectly tender <br>
+            <p class="hero-fade text-white/75 text-sm md:text-xl max-w-xl leading-relaxed mb-10 md:mb-16">
+                Inspired by Nepal’s love for spice. The fiery kick of Akabare Khursani meets perfectly tender
                 chicken. Turn ordinary meals into unforgettable bites.
             </p>
 
-            <div class="hero-fade flex flex-wrap gap-8">
-                <button
-                    class="bg-spice text-white px-14 py-5 rounded-full font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-spice transition-all duration-500 shadow-xl">
-                    <a href="products.html">Explore Jars</a>
-                </button>
+            <div class="hero-fade flex flex-wrap gap-4 md:gap-8">
+                <a href="products.html"
+                    class="bg-spice text-white px-10 md:px-14 py-4 md:py-5 rounded-full font-bold uppercase text-[9px] md:text-[10px] tracking-[0.2em] hover:bg-white hover:text-spice transition-all duration-500 shadow-xl text-center">
+                    Explore Jars
+                </a>
                 <a href="story.html"
-                    class="border border-white/40 text-white px-14 py-5 rounded-full font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-white/15 transition-all duration-500 flex items-center shadow-lg">
+                    class="border border-white/40 text-white px-10 md:px-14 py-4 md:py-5 rounded-full font-bold uppercase text-[9px] md:text-[10px] tracking-[0.2em] hover:bg-white/15 transition-all duration-500 flex items-center justify-center shadow-lg text-center">
                     Our Full Story
                 </a>
             </div>
         </div>
 
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 text-center">
-            <p class="text-white/40 uppercase tracking-[0.5em] text-[9px] mb-4">Discover More</p>
-            <div class="text-white/40 animate-bounce-slow text-2xl">↓</div>
+        <div class="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-20 text-center">
+            <p class="text-white/40 uppercase tracking-[0.5em] text-[8px] md:text-[9px] mb-4">Discover More</p>
+            <div class="text-white/40 animate-bounce-slow text-xl md:text-2xl">↓</div>
         </div>
     </section>
 
-    <div class="bg-spice py-8 overflow-hidden border-y border-white/10 relative z-30">
+    <div class="bg-spice py-6 md:py-8 overflow-hidden border-y border-white/10 relative z-30">
         <div class="animate-marquee whitespace-nowrap">
-            <span class="text-white font-display text-4xl mx-16 italic">Authentic Flavors</span>
-            <span class="text-white font-display text-4xl mx-16">Hand-Picked Spices</span>
-            <span class="text-white font-display text-4xl mx-16 italic">Zero Preservatives</span>
-            <span class="text-white font-display text-4xl mx-16">Himalayan Soul</span>
-            <span class="text-white font-display text-4xl mx-16 italic">Small Batch Craft</span>
-            <span class="text-white font-display text-4xl mx-16">Authentic Flavors</span>
-            <span class="text-white font-display text-4xl mx-16 italic">Premium Quality</span>
+            <span class="text-white font-display text-3xl md:text-4xl mx-8 md:mx-16 italic">Authentic Flavors</span>
+            <span class="text-white font-display text-3xl md:text-4xl mx-8 md:mx-16">Hand-Picked Spices</span>
+            <span class="text-white font-display text-3xl md:text-4xl mx-8 md:mx-16 italic">Zero Preservatives</span>
+            <span class="text-white font-display text-3xl md:text-4xl mx-8 md:mx-16">Himalayan Soul</span>
+            <span class="text-white font-display text-3xl md:text-4xl mx-8 md:mx-16 italic">Small Batch Craft</span>
+            <span class="text-white font-display text-3xl md:text-4xl mx-8 md:mx-16">Authentic Flavors</span>
+            <span class="text-white font-display text-3xl md:text-4xl mx-8 md:mx-16 italic">Premium Quality</span>
         </div>
     </div>
 
     <section id="about"
-        class="py-40 px-10 md:px-20 lg:px-40 grid md:grid-cols-2 gap-24 items-center bg-white relative z-20">
+        class="py-24 md:py-40 px-6 md:px-20 lg:px-40 grid md:grid-cols-2 gap-16 md:gap-24 items-center bg-white relative z-20">
         <div class="reveal-up relative">
-            <div class="overflow-hidden rounded-2xl h-[650px] shadow-2xl">
+            <div class="overflow-hidden rounded-2xl h-[400px] md:h-[650px] shadow-2xl">
                 <img src="bata.png" class="w-full h-full object-cover" alt="Artisanal Jar Close-up">
             </div>
             <div
-                class="absolute -bottom-12 -right-12 bg-amber p-12 rounded-2xl text-white hidden xl:block shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
-                <p class="font-display text-5xl mb-2">100%</p>
-                <p class="text-xs uppercase font-bold tracking-[0.2em]">Natural & Organic</p>
+                class="absolute -bottom-6 md:-bottom-12 -right-6 md:-right-12 bg-amber p-8 md:p-12 rounded-2xl text-white hidden sm:block shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
+                <p class="font-display text-4xl md:text-5xl mb-2">100%</p>
+                <p class="text-[10px] md:text-xs uppercase font-bold tracking-[0.2em]">Natural & Organic</p>
             </div>
         </div>
 
         <div class="reveal-up">
-            <h6 class="text-spice font-bold uppercase tracking-[0.4em] text-xs mb-6">Our Deep Heritage</h6>
-            <h2 class="font-display text-5xl md:text-7xl leading-[1.1] mb-10">
-                Inspired by Nepal’s love for spice<br>
-                <span class="italic text-charcoal/90"></span>
+            <h6 class="text-spice font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs mb-6">Our Deep Heritage</h6>
+            <h2 class="font-display text-4xl md:text-7xl leading-tight mb-8 md:mb-10">
+                Inspired by Nepal’s love for spice
             </h2>
-            <p class="text-charcoal/70 text-lg md:text-xl leading-relaxed mb-10">
+            <p class="text-charcoal/70 text-base md:text-xl leading-relaxed mb-8 md:mb-10">
                 In Nepal, food is never just food. It is emotion, celebration, and connection. From the steaming plate
                 of dal bhat to the small bowl of fiery achar on the side, Nepali meals are incomplete without that one
                 bold flavor. That love for spice and chicken inspired us to create something special.
             </p>
-            <div class="h-[2px] w-24 bg-spice mb-10"></div>
-            <p class="font-bold uppercase text-[11px] tracking-[0.3em] text-charcoal/40">
+            <div class="h-[2px] w-24 bg-spice mb-8 md:mb-10"></div>
+            <p class="font-bold uppercase text-[10px] md:text-[11px] tracking-[0.3em] text-charcoal/40">
                 ESTABLISHED 2026 • HANDMADE IN MANIGRAM
             </p>
         </div>
@@ -371,157 +392,157 @@
         <div class="h-[40vh]"></div>
     </section>
 
-    <section id="product" class="bg-charcoal py-40 px-10 text-white relative z-20">
-        <div class="text-center mb-24 reveal-up">
-            <h2 class="font-display text-6xl md:text-8xl mb-6">The Collection</h2>
-            <p class="text-white/40 tracking-[0.2em] uppercase text-xs">Small-batch creations for the boldest palates.
+    <section id="product" class="bg-charcoal py-24 md:py-40 px-6 md:px-10 text-white relative z-20">
+        <div class="text-center mb-16 md:mb-24 reveal-up">
+            <h2 class="font-display text-5xl md:text-8xl mb-6">The Collection</h2>
+            <p class="text-white/40 tracking-[0.2em] uppercase text-[10px] md:text-xs">Small-batch creations for the boldest palates.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-12 lg:px-24 mb-20" id="product-grid">
-            <a href="products.html" class="product-card group cursor-pointer p-8 rounded-[2.5rem] block bg-[#1a1714]">
-                <div class="overflow-hidden rounded-3xl mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:px-24 mb-16 md:mb-20" id="product-grid">
+            <a href="products.html" class="product-card group cursor-pointer p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] block bg-[#1a1714]">
+                <div class="overflow-hidden rounded-3xl mb-6 md:mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
                     <img src="classic spicy.jpg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 opacity-90"
                         alt="Classic Spicy Jar">
                 </div>
-                <h3 class="font-display text-3xl mb-3 group-hover:text-spice transition-colors">Classic Spicy Chicken
+                <h3 class="font-display text-2xl md:text-3xl mb-3 group-hover:text-spice transition-colors">Classic Spicy Chicken
                 </h3>
                 <p class="text-white/60 text-sm mb-4 leading-relaxed">The original masterpiece. Tender chicken chunks
                     slow-cooked with Himalayan red chilies and a hint of garlic.</p>
                 <p class="text-amber font-bold text-lg">Rs. 450</p>
             </a>
 
-            <a href="products.html" class="product-card group cursor-pointer p-8 rounded-[2.5rem] block bg-[#1a1714]">
-                <div class="overflow-hidden rounded-3xl mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
+            <a href="products.html" class="product-card group cursor-pointer p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] block bg-[#1a1714]">
+                <div class="overflow-hidden rounded-3xl mb-6 md:mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
                     <img src="timur infuseed.jpg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 opacity-90"
                         alt="Timur Infused Jar">
                 </div>
-                <h3 class="font-display text-3xl mb-3 group-hover:text-spice transition-colors">Timur Infused Special
+                <h3 class="font-display text-2xl md:text-3xl mb-3 group-hover:text-spice transition-colors">Timur Infused Special
                 </h3>
                 <p class="text-white/60 text-sm mb-4 leading-relaxed">A numbing, citrusy explosion of flavor featuring
                     the finest Szechuan pepper from the high altitudes of Nepal.</p>
                 <p class="text-amber font-bold text-lg">Rs. 350</p>
             </a>
 
-            <a href="products.html" class="product-card group cursor-pointer p-8 rounded-[2.5rem] block bg-[#1a1714]">
-                <div class="overflow-hidden rounded-3xl mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
+            <a href="products.html" class="product-card group cursor-pointer p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] block bg-[#1a1714]">
+                <div class="overflow-hidden rounded-3xl mb-6 md:mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
                     <img src="smoked chili.jpg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 opacity-90"
                         alt="Smoked Garlic Jar">
                 </div>
-                <h3 class="font-display text-3xl mb-3 group-hover:text-spice transition-colors">Smoked Chili Garlic</h3>
+                <h3 class="font-display text-2xl md:text-3xl mb-3 group-hover:text-spice transition-colors">Smoked Chili Garlic</h3>
                 <p class="text-white/60 text-sm mb-4 leading-relaxed">Deep, earthy notes of fire-roasted garlic combined
                     with sun-dried chilies for a bold, smoky finish.</p>
                 <p class="text-amber font-bold text-lg">Rs. 390</p>
             </a>
 
             <a href="products.html"
-                class="product-card hidden-product group cursor-pointer p-8 rounded-[2.5rem] bg-[#1a1714] hidden opacity-0 translate-y-10">
-                <div class="overflow-hidden rounded-3xl mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
+                class="product-card hidden-product group cursor-pointer p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-[#1a1714] hidden opacity-0 translate-y-10">
+                <div class="overflow-hidden rounded-3xl mb-6 md:mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
                     <img src="sign.PNG"
                         class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 opacity-90"
                         alt="Lemon Zest Jar">
                 </div>
-                <h3 class="font-display text-3xl mb-3 group-hover:text-spice transition-colors">Our signature</h3>
+                <h3 class="font-display text-2xl md:text-3xl mb-3 group-hover:text-spice transition-colors">Our signature</h3>
                 <p class="text-white/60 text-sm mb-4 leading-relaxed">A bold, signature pickle that melds the fiery heat
                     of Dalle Khursani with traditional Silato Masala.</p>
                 <p class="text-amber font-bold text-lg">Rs. 570</p>
             </a>
 
             <a href="products.html"
-                class="product-card hidden-product group cursor-pointer p-8 rounded-[2.5rem] bg-[#1a1714] hidden opacity-0 translate-y-10">
-                <div class="overflow-hidden rounded-3xl mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
+                class="product-card hidden-product group cursor-pointer p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-[#1a1714] hidden opacity-0 translate-y-10">
+                <div class="overflow-hidden rounded-3xl mb-6 md:mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
                     <img src="akbar.PNG"
                         class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 opacity-90"
                         alt="Extra Hot Jar">
                 </div>
-                <h3 class="font-display text-3xl mb-3 group-hover:text-spice transition-colors">Akabare Firebrand</h3>
+                <h3 class="font-display text-2xl md:text-3xl mb-3 group-hover:text-spice transition-colors">Akabare Firebrand</h3>
                 <p class="text-white/60 text-sm mb-4 leading-relaxed">Strictly for the brave. Made with 100% Akabare
                     chilies—the world's most aromatic and fiery pepper.</p>
                 <p class="text-amber font-bold text-lg">Rs. 490</p>
             </a>
 
             <a href="products.html"
-                class="product-card hidden-product group cursor-pointer p-8 rounded-[2.5rem] bg-[#1a1714] hidden opacity-0 translate-y-10">
-                <div class="overflow-hidden rounded-3xl mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
+                class="product-card hidden-product group cursor-pointer p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-[#1a1714] hidden opacity-0 translate-y-10">
+                <div class="overflow-hidden rounded-3xl mb-6 md:mb-8 bg-[#2a2522] aspect-[4/5] shadow-inner">
                     <img src="festive.PNG"
                         class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 opacity-90"
                         alt="Mustard Oil Jar">
                 </div>
-                <h3 class="font-display text-3xl mb-3 group-hover:text-spice transition-colors">Festive Fire</h3>
+                <h3 class="font-display text-2xl md:text-3xl mb-3 group-hover:text-spice transition-colors">Festive Fire</h3>
                 <p class="text-white/60 text-sm mb-4 leading-relaxed">The vintage recipe. Extra cold-pressed mustard oil
                     creates a rich, pungent base that lingers on the tongue.</p>
                 <p class="text-amber font-bold text-lg">Rs. 520</p>
             </a>
         </div>
 
-        <div class="flex justify-center mt-12">
+        <div class="flex justify-center mt-8 md:mt-12">
             <button id="load-more-btn"
-                class="border-2 border-spice text-white px-16 py-6 rounded-full font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-spice transition-all duration-500 shadow-2xl flex items-center gap-4">
+                class="border-2 border-spice text-white px-10 md:px-16 py-4 md:py-6 rounded-full font-bold uppercase text-[9px] md:text-[10px] tracking-[0.3em] hover:bg-spice transition-all duration-500 shadow-2xl flex items-center gap-4">
                 Discover More Flavors <span>↓</span>
             </button>
         </div>
     </section>
 
-    <section id="process" class="py-40 px-10 md:px-20 lg:px-40 relative overflow-hidden">
+    <section id="process" class="py-24 md:py-40 px-6 md:px-20 lg:px-40 relative overflow-hidden">
 
         <div class="process-overlay"></div>
 
         <div class="relative z-10">
-            <div class="text-center mb-24 reveal-up">
-                <h6 class="text-white font-bold tracking-[0.5em] uppercase text-xs mb-6">Our Handcrafted Method</h6>
-                <h2 class="font-display text-6xl md:text-[7rem] text-white uppercase leading-none">
+            <div class="text-center mb-16 md:mb-24 reveal-up">
+                <h6 class="text-white/80 font-bold tracking-[0.5em] uppercase text-[10px] md:text-xs mb-6">Our Handcrafted Method</h6>
+                <h2 class="font-display text-4xl md:text-[7rem] text-white uppercase leading-none">
                     Handmade <span class="italic text-spice">Perfection</span>
                 </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
                 <div class="proc-wrapper">
                     <div
-                        class="proc-card h-full p-12 border border-white/10 rounded-[3rem] bg-white/70 backdrop-blur-md transition-all duration-700 hover:bg-white hover:shadow-3xl group">
+                        class="proc-card h-full p-8 md:p-12 border border-white/10 rounded-[2.5rem] md:rounded-[3rem] bg-white/70 backdrop-blur-md transition-all duration-700 hover:bg-white hover:shadow-3xl group">
                         <div
-                            class="w-14 h-14 rounded-full bg-spice/10 flex items-center justify-center text-spice font-black mb-8 text-xl">
+                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-spice/10 flex items-center justify-center text-spice font-black mb-6 md:mb-8 text-lg md:text-xl">
                             01</div>
-                        <h3 class="font-display text-3xl mb-6">Source</h3>
-                        <p class="text-base leading-relaxed text-charcoal opacity-70 group-hover:opacity-100">We
+                        <h3 class="font-display text-2xl md:text-3xl mb-4 md:mb-6">Source</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-charcoal opacity-70 group-hover:opacity-100">We
                             hand-select premium organic chicken from local sustainable farms across Nepal.</p>
                     </div>
                 </div>
 
                 <div class="proc-wrapper">
                     <div
-                        class="proc-card h-full p-12 border border-white/10 rounded-[3rem] bg-white/70 backdrop-blur-md transition-all duration-700 hover:bg-white hover:shadow-3xl group">
+                        class="proc-card h-full p-8 md:p-12 border border-white/10 rounded-[2.5rem] md:rounded-[3rem] bg-white/70 backdrop-blur-md transition-all duration-700 hover:bg-white hover:shadow-3xl group">
                         <div
-                            class="w-14 h-14 rounded-full bg-amber/10 flex items-center justify-center text-amber font-black mb-8 text-xl">
+                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-amber/10 flex items-center justify-center text-amber font-black mb-6 md:mb-8 text-lg md:text-xl">
                             02</div>
-                        <h3 class="font-display text-3xl mb-6">Spice</h3>
-                        <p class="text-base leading-relaxed text-charcoal opacity-70 group-hover:opacity-100">A secret
+                        <h3 class="font-display text-2xl md:text-3xl mb-4 md:mb-6">Spice</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-charcoal opacity-70 group-hover:opacity-100">A secret
                             generational recipe of Timur and Himalayan sun-dried red chilies.</p>
                     </div>
                 </div>
 
                 <div class="proc-wrapper">
                     <div
-                        class="proc-card h-full p-12 border border-white/10 rounded-[3rem] bg-white/70 backdrop-blur-md transition-all duration-700 hover:bg-white hover:shadow-3xl group">
+                        class="proc-card h-full p-8 md:p-12 border border-white/10 rounded-[2.5rem] md:rounded-[3rem] bg-white/70 backdrop-blur-md transition-all duration-700 hover:bg-white hover:shadow-3xl group">
                         <div
-                            class="w-14 h-14 rounded-full bg-spice/10 flex items-center justify-center text-spice font-black mb-8 text-xl">
+                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-spice/10 flex items-center justify-center text-spice font-black mb-6 md:mb-8 text-lg md:text-xl">
                             03</div>
-                        <h3 class="font-display text-3xl mb-6">Slow Cook</h3>
-                        <p class="text-base leading-relaxed text-charcoal opacity-70 group-hover:opacity-100">
+                        <h3 class="font-display text-2xl md:text-3xl mb-4 md:mb-6">Slow Cook</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-charcoal opacity-70 group-hover:opacity-100">
                             Masterfully slow-cooked in small batches to preserve every ounce of deep flavor.</p>
                     </div>
                 </div>
 
                 <div class="proc-wrapper">
                     <div
-                        class="proc-card h-full p-12 border border-white/10 rounded-[3rem] bg-white/70 backdrop-blur-md transition-all duration-700 hover:bg-white hover:shadow-3xl group">
+                        class="proc-card h-full p-8 md:p-12 border border-white/10 rounded-[2.5rem] md:rounded-[3rem] bg-white/70 backdrop-blur-md transition-all duration-700 hover:bg-white hover:shadow-3xl group">
                         <div
-                            class="w-14 h-14 rounded-full bg-amber/10 flex items-center justify-center text-amber font-black mb-8 text-xl">
+                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-amber/10 flex items-center justify-center text-amber font-black mb-6 md:mb-8 text-lg md:text-xl">
                             04</div>
-                        <h3 class="font-display text-3xl mb-6">Jar</h3>
-                        <p class="text-base leading-relaxed text-charcoal opacity-70 group-hover:opacity-100">Naturally
+                        <h3 class="font-display text-2xl md:text-3xl mb-4 md:mb-6">Jar</h3>
+                        <p class="text-sm md:text-base leading-relaxed text-charcoal opacity-70 group-hover:opacity-100">Naturally
                             preserved in cold-pressed mustard oil and vacuum-sealed for freshness.</p>
                     </div>
                 </div>
@@ -529,37 +550,37 @@
         </div>
     </section>
 
-    <section id="contact" class="bg-charcoal py-40 px-10 md:px-20 lg:px-40 text-cream relative z-20">
-        <div class="grid lg:grid-cols-2 gap-32">
+    <section id="contact" class="bg-charcoal py-24 md:py-40 px-6 md:px-20 lg:px-40 text-cream relative z-20">
+        <div class="grid lg:grid-cols-2 gap-20 md:gap-32">
             <div class="reveal-up">
-                <h2 class="font-display text-7xl mb-12 italic text-spice">Secure Your Jar</h2>
-                <form class="space-y-10 mt-16">
-                    <div class="grid md:grid-cols-2 gap-10">
+                <h2 class="font-display text-5xl md:text-7xl mb-8 md:mb-12 italic text-spice">Secure Your Jar</h2>
+                <form class="space-y-8 md:space-y-10 mt-12 md:mt-16">
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-10">
                         <input type="text" placeholder="FULL NAME"
-                            class="form-input text-white text-xs tracking-widest">
+                            class="form-input text-white text-[10px] md:text-xs tracking-widest">
                         <input type="email" placeholder="EMAIL ADDRESS"
-                            class="form-input text-white text-xs tracking-widest">
+                            class="form-input text-white text-[10px] md:text-xs tracking-widest">
                     </div>
                     <textarea rows="5" placeholder="TELL US YOUR ORDER OR MESSAGE"
-                        class="form-input text-white text-xs tracking-widest"></textarea>
-                    <button
-                        class="bg-spice text-white px-16 py-6 rounded-full font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-white hover:text-spice transition-all duration-500 shadow-2xl">
+                        class="form-input text-white text-[10px] md:text-xs tracking-widest"></textarea>
+                    <button type="submit"
+                        class="bg-spice text-white px-12 md:px-16 py-4 md:py-6 rounded-full font-bold uppercase text-[9px] md:text-[10px] tracking-[0.3em] hover:bg-white hover:text-spice transition-all duration-500 shadow-2xl">
                         Send Inquiry
                     </button>
                 </form>
             </div>
 
-            <div class="reveal-up flex flex-col justify-center space-y-16">
+            <div class="reveal-up flex flex-col justify-center space-y-12 md:space-y-16">
                 <div>
-                    <h4 class="text-spice font-bold uppercase tracking-[0.4em] text-[11px] mb-6">Physical Location</h4>
-                    <p class="font-display text-4xl text-white">Manigram, Nepal</p>
+                    <h4 class="text-spice font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px] mb-6">Physical Location</h4>
+                    <p class="font-display text-3xl md:text-4xl text-white">Manigram, Nepal</p>
                 </div>
 
-                <div class="pt-8">
-                    <p class="text-white/40 uppercase tracking-[0.3em] text-[10px] mb-6">For Instant Orders</p>
+                <div class="pt-4 md:pt-8">
+                    <p class="text-white/40 uppercase tracking-[0.3em] text-[9px] md:text-[10px] mb-6">For Instant Orders</p>
                     <a href="https://wa.me/9864409867?text=I%20would%20like%20to%20order%20Chicken%20Achhar..."
-                        class="whatsapp-btn inline-flex items-center gap-6 bg-[#25D366] text-white px-12 py-5 rounded-full font-bold uppercase text-[10px] tracking-[0.2em] hover:scale-105 transition-all duration-300 shadow-2xl">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                        class="whatsapp-btn inline-flex items-center gap-4 md:gap-6 bg-[#25D366] text-white px-10 md:px-12 py-4 md:py-5 rounded-full font-bold uppercase text-[9px] md:text-[10px] tracking-[0.2em] hover:scale-105 transition-all duration-300 shadow-2xl">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path
                                 d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z" />
                         </svg>
@@ -570,11 +591,11 @@
         </div>
     </section>
 
-    <footer class="py-16 text-center bg-cream border-t border-charcoal/10">
-        <p class="text-[10px] text-charcoal/50 uppercase tracking-[0.6em] mb-4">
+    <footer class="py-12 md:py-16 text-center bg-cream border-t border-charcoal/10">
+        <p class="text-[9px] md:text-[10px] text-charcoal/50 uppercase tracking-[0.4em] md:tracking-[0.6em] mb-4">
             Authenticity Guaranteed • Handcrafted with Love
         </p>
-        <p class="text-[10px] text-charcoal/30 uppercase tracking-[0.3em]">
+        <p class="text-[9px] md:text-[10px] text-charcoal/30 uppercase tracking-[0.3em]">
             © 2026 Spicy Achaar Tales. All Rights Reserved.
         </p>
     </footer>
@@ -598,24 +619,26 @@
             y: 100, opacity: 0, duration: 1.5, stagger: 0.25
         });
 
-        const jarTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#explode-section",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1.2,
-                pin: "#pin-container",
-                anticipatePin: 1
-            }
-        });
+        if (window.innerWidth > 768) {
+            const jarTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#explode-section",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1.2,
+                    pin: "#pin-container",
+                    anticipatePin: 1
+                }
+            });
 
-        jarTl.to("#explode-section", { backgroundColor: "#0a0a0a", duration: 1.5 }, 0)
-            .to("#jar-lid", { y: -750, rotation: 25, scale: 0.4, opacity: 0, duration: 4 }, 0)
-            .to("#reveal-text", { opacity: 1, scale: 1.2, duration: 3 }, 0.5)
-            .to("#spices-wrap", { opacity: 1, scale: 1.4, y: -180, duration: 4 }, 0.5)
-            .to("#side-info", { opacity: 1, y: -40, duration: 2 }, 1.2)
-            .to("#info-p", { color: "#ffffff", duration: 1 }, 1.2)
-            .to("#jar-body", { y: 350, scale: 0.75, opacity: 0.4, duration: 4 }, 0.5);
+            jarTl.to("#explode-section", { backgroundColor: "#0a0a0a", duration: 1.5 }, 0)
+                .to("#jar-lid", { y: -750, rotation: 25, scale: 0.4, opacity: 0, duration: 4 }, 0)
+                .to("#reveal-text", { opacity: 1, scale: 1.2, duration: 3 }, 0.5)
+                .to("#spices-wrap", { opacity: 1, scale: 1.4, y: -180, duration: 4 }, 0.5)
+                .to("#side-info", { opacity: 1, y: -40, duration: 2 }, 1.2)
+                .to("#info-p", { color: "#ffffff", duration: 1 }, 1.2)
+                .to("#jar-body", { y: 350, scale: 0.75, opacity: 0.4, duration: 4 }, 0.5);
+        }
 
         gsap.utils.toArray(".reveal-up").forEach((container) => {
             gsap.from(container, {
@@ -644,28 +667,29 @@
             y: 80, opacity: 0, duration: 1.2, stagger: 0.2, ease: "back.out(1.5)"
         });
 
-        // Load More Logic
         const loadMoreBtn = document.getElementById('load-more-btn');
         const hiddenProducts = document.querySelectorAll('.hidden-product');
 
-        loadMoreBtn.addEventListener('click', () => {
-            hiddenProducts.forEach(el => {
-                el.classList.remove('hidden');
-                el.classList.add('block');
-            });
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+                hiddenProducts.forEach(el => {
+                    el.classList.remove('hidden');
+                    el.classList.add('block');
+                });
 
-            gsap.to(".hidden-product", {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.2,
-                ease: "power3.out",
-                onComplete: () => {
-                    loadMoreBtn.parentElement.style.display = 'none';
-                    ScrollTrigger.refresh();
-                }
+                gsap.to(".hidden-product", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power3.out",
+                    onComplete: () => {
+                        loadMoreBtn.parentElement.style.display = 'none';
+                        ScrollTrigger.refresh();
+                    }
+                });
             });
-        });
+        }
 
         window.addEventListener("load", () => { ScrollTrigger.refresh(); });
     </script>
