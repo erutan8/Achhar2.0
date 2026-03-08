@@ -36,7 +36,19 @@
         .main-stage { position: relative; flex-grow: 1; overflow: hidden; display: flex; flex-direction: column; }
 
         .video-wrapper { position: absolute; inset: 0; z-index: 1; background: #000; }
-        video { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.8s ease-in-out; }
+        video { 
+              position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 0.8s ease-in-out;
+        }
 
         /* Desktop Sidebar Mask */
         .sidebar-mask {
@@ -49,12 +61,11 @@
         }
 
         /* Mobile Bottom Gradient Mask */
-        @media (max-width: 768px) {
-            .sidebar-mask {
-                width: 100%; height: 60%; top: auto; bottom: 0;
-                background: linear-gradient(to top, rgba(0,0,0,1) 20%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0) 100%);
-            }
-        }
+  @media (max-width: 768px) {
+    video{
+        object-position: 90% center;
+    }
+}
 
         /* Container for Desktop/Mobile */
         .sidebar-container {
@@ -198,11 +209,11 @@
     <script>
         const PRODUCTS = [
             { id: 'classic', title: 'Classic Spicy', price: 450, desc: 'Hand-torn chicken in Akabare chili oil.', videoSrc: 'video1.mp4' },
-            { id: 'timur', title: 'Timur Special', price: 350, desc: 'Citrusy zing from wild-harvested Timur.', videoSrc: 'video2.mp4' },
-            { id: 'garlic', title: 'Smoked Garlic', price: 390, desc: 'Roasted garlic with slow-smoked flakes.', videoSrc: 'videos/video3.mp4' },
-            { id: 'lemon', title: 'Our Signature', price: 590, desc: 'Tangy preserved lemons and mild heat.', videoSrc: 'videos/lemon.mp4' },
-            { id: 'akabare', title: 'Akabare Fire', price: 450, desc: 'Legendary Ghost Chili. Maximum heat.', videoSrc: 'videos/akabare.mp4' },
-            { id: 'herbal', title: 'Festive Fire', price: 520, desc: 'Earthy mountain herbs and Jimbu.', videoSrc: 'videos/herbal.mp4' }
+            { id: 'timur', title: 'Timur Special', price: 350, desc: 'Citrusy zing from wild-harvested Timur.', videoSrc: 'video1.mp4' },
+            { id: 'garlic', title: 'Smoked Garlic', price: 390, desc: 'Roasted garlic with slow-smoked flakes.', videoSrc: 'video1.mp4' },
+            { id: 'lemon', title: 'Our Signature', price: 590, desc: 'Tangy preserved lemons and mild heat.', videoSrc: 'video1.mp4' },
+            { id: 'akabare', title: 'Akabare Fire', price: 450, desc: 'Legendary Ghost Chili. Maximum heat.', videoSrc: 'video1.mp4' },
+            { id: 'herbal', title: 'Festive Fire', price: 520, desc: 'Earthy mountain herbs and Jimbu.', videoSrc: 'video1.mp4' }
         ];
 
         let cart = [];
