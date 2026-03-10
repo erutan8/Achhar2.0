@@ -14,7 +14,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spicy Chicken Achhar</title>
+    <title>Spicy chicken Achhar</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -45,13 +45,13 @@
     </script>
     <meta property="og:type" content="website">
 <meta property="og:url" content="https://erutan8.github.io/Achhar2.0/">
-<meta property="og:title" content="Spicy Achaar Tales | Authentic Nepali Spices">
+<meta property="og:title" content="Spicy chicken Achhar">
 <meta property="og:description" content="Homemade spicy chicken achhar and authentic Nepali spices.">
 <meta property="og:image" content="https://erutan8.github.io/Achhar2.0/thumbnail.PNG">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://erutan8.github.io/Achhar2.0/">
-<meta property="twitter:title" content="Spicy Achaar Tales | Authentic Nepali Spices">
+<meta property="twitter:title" content="Spicy chicken Achhar">
 <meta property="twitter:description" content="Homemade spicy chicken achhar and authentic Nepali spices.">
 <meta property="twitter:image" content="https://erutan8.github.io/Achhar2.0/thumbnail.PNG">
 
@@ -251,6 +251,117 @@
                 padding-top: 100px;
             }
         }
+
+        /* =============================================
+           SOCIAL ICONS — Footer
+        ============================================= */
+
+        .social-icons-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .social-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        /* Individual brand colours as CSS vars */
+        .social-link--instagram {
+            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            box-shadow: 0 4px 20px rgba(220, 39, 67, 0.4);
+        }
+        .social-link--tiktok {
+            background: #010101;
+            box-shadow: 0 4px 20px rgba(105, 201, 208, 0.35);
+        }
+        .social-link--facebook {
+            background: #1877F2;
+            box-shadow: 0 4px 20px rgba(24, 119, 242, 0.4);
+        }
+
+        /* Ripple layer */
+        .social-link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            transform: scale(0);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Glow ring on hover */
+        .social-link::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.4s ease, box-shadow 0.4s ease;
+        }
+        .social-link--instagram::after { box-shadow: 0 0 0 3px #dc2743; }
+        .social-link--tiktok::after    { box-shadow: 0 0 0 3px #69C9D0; }
+        .social-link--facebook::after  { box-shadow: 0 0 0 3px #1877F2; }
+
+        .social-link:hover {
+            transform: translateY(-6px) scale(1.15);
+        }
+        .social-link:hover::before { transform: scale(1); }
+        .social-link:hover::after  { opacity: 1; }
+
+        /* TikTok dual-colour icon glow */
+        .social-link--tiktok:hover .tiktok-icon-cyan  { filter: drop-shadow(-2px 0 0 #69C9D0); }
+        .social-link--tiktok:hover .tiktok-icon-red   { filter: drop-shadow( 2px 0 0 #EE1D52); }
+
+        /* Entrance animation — icons float up when footer comes into view */
+        @keyframes socialEntrance {
+            from { opacity: 0; transform: translateY(24px) scale(0.7); }
+            to   { opacity: 1; transform: translateY(0)    scale(1);   }
+        }
+
+        .social-link {
+            opacity: 0;
+            animation: socialEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .social-link:nth-child(1) { animation-delay: 0.1s; }
+        .social-link:nth-child(2) { animation-delay: 0.22s; }
+        .social-link:nth-child(3) { animation-delay: 0.34s; }
+
+        /* Tooltip */
+        .social-link .tooltip {
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+            background: #1f1a17;
+            color: #f5f2ed;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 30px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .social-link:hover .tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
     </style>
 </head>
 
@@ -299,7 +410,7 @@
             </h1>
 
             <p class="hero-fade text-white/75 text-sm md:text-xl max-w-xl leading-relaxed mb-10 md:mb-16">
-                Inspired by Nepal’s love for spice. The fiery kick of Akabare Khursani meets perfectly tender
+                Inspired by Nepal's love for spice. The fiery kick of Akabare Khursani meets perfectly tender
                 chicken. Turn ordinary meals into unforgettable bites.
             </p>
 
@@ -349,7 +460,7 @@
         <div class="reveal-up">
             <h6 class="text-spice font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs mb-6">Our Deep Heritage</h6>
             <h2 class="font-display text-4xl md:text-7xl leading-tight mb-8 md:mb-10">
-                Inspired by Nepal’s love for spice
+                Inspired by Nepal's love for spice
             </h2>
             <p class="text-charcoal/70 text-base md:text-xl leading-relaxed mb-8 md:mb-10">
                 In Nepal, food is never just food. It is emotion, celebration, and connection. From the steaming plate
@@ -591,7 +702,48 @@
         </div>
     </section>
 
+    <!-- ============================================================
+         FOOTER — with animated social icons
+    ============================================================ -->
     <footer class="py-12 md:py-16 text-center bg-cream border-t border-charcoal/10">
+
+        <!-- Social Icons -->
+        <div class="social-icons-row">
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/spicychickenachar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"
+               class="social-link social-link--instagram" aria-label="Instagram">
+                <span class="tooltip">Instagram</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4.5"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+                </svg>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@spicy_chicken_achhar?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
+               class="social-link social-link--tiktok" aria-label="TikTok">
+                <span class="tooltip">TikTok</span>
+                <!-- TikTok logo with its signature layered-colour look -->
+                <svg width="20" height="22" viewBox="0 0 24 28" fill="none">
+                    <path class="tiktok-icon-cyan" d="M17 1c.5 3 2.2 5 5 5.5v3.5c-1.8 0-3.5-.5-5-1.5V17a8 8 0 1 1-8-8c.3 0 .7 0 1 .05V13a4.5 4.5 0 1 0 3 4.3V1h4z" fill="#69C9D0"/>
+                    <path class="tiktok-icon-red" d="M15 1c.5 3 2.2 5 5 5.5v3.5c-1.8 0-3.5-.5-5-1.5V17a8 8 0 1 1-8-8c.3 0 .7 0 1 .05V13a4.5 4.5 0 1 0 3 4.3V1h4z" fill="#EE1D52" opacity="0.6"/>
+                    <path d="M16 2c.5 3 2.2 5 5 5.5v3.5c-1.8 0-3.5-.5-5-1.5V18a8 8 0 1 1-8-8c.3 0 .7 0 1 .05V14a4.5 4.5 0 1 0 3 4.3V2h4z" fill="white"/>
+                </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" rel="noopener noreferrer"
+               class="social-link social-link--facebook" aria-label="Facebook">
+                <span class="tooltip">Facebook</span>
+                <svg width="11" height="22" viewBox="0 0 10 20" fill="white">
+                    <path d="M6.5 20V11h3l.5-3.5H6.5V5.5c0-1 .3-1.7 1.8-1.7H10V.1C9.7.1 8.6 0 7.3 0 4.7 0 3 1.5 3 4.7V7.5H0V11h3v9h3.5z"/>
+                </svg>
+            </a>
+
+        </div>
+
         <p class="text-[9px] md:text-[10px] text-charcoal/50 uppercase tracking-[0.4em] md:tracking-[0.6em] mb-4">
             Authenticity Guaranteed • Handcrafted with Love
         </p>
